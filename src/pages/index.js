@@ -18,7 +18,7 @@ const IndexPage = () => {
   return (
     <main>
       <div className="form-container">
-        <h1>HOC Bridal Calculation</h1>
+        <h1>HOC Bridal Calculator</h1>
         <form id="booking-form">
           <div className="form-group">
             <label>Bride</label>
@@ -165,5 +165,5 @@ const IndexPage = () => {
 
 export default IndexPage;
 
-export const Head = () => <title>HOC Bridal Booking Form</title>;
+export const Head = () => <title>HOC Bridal Calculator</title>;
 
