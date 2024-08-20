@@ -1,0 +1,88 @@
+/* Header styling */
+.header-container {
+    background-color: #ffcd00; /* Match the button gradient */
+    padding: 20px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-bottom: 2px solid #e6b800;
+    position: fixed; /* Make the header fixed */
+    top: 0;
+    width: 100%; /* Ensure it spans the full width of the viewport */
+    z-index: 1000; /* Ensure it stays on top of other elements */
+}
+
+.header-title {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    color: #333;
+    font-size: 28px;
+    letter-spacing: 1px;
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+nav {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+}
+
+.nav-item {
+    display: inline;
+    margin: 0 15px;
+}
+
+.nav-link {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #444;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.nav-link:focus {
+    background-color: #ffda77;
+    color: #333;
+    outline: none;
+}
+
+/* Add margin to the body to account for the fixed header */
+body {
+    margin-top: 100px; /* Adjust this value to match the height of your header */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-title {
+        font-size: 24px;
+    }
+
+    .nav-link {
+        font-size: 16px;
+        padding: 8px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-title {
+        font-size: 20px;
+    }
+
+    .nav-link {
+        font-size: 14px;
+        padding: 6px 10px;
+    }
+}

@@ -1,20 +1,16 @@
-body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: #f5f5f5;
-    margin: 0;
-    padding: 0;
-}
-
+/* Form container styling */
 .form-container {
     background-color: #fff;
     width: 60%;
-    margin: 120px auto 60px auto; /* Increase the top margin to add space below the header */
+    max-width: 600px; /* Set a maximum width to ensure the form is not too wide */
+    margin: 120px auto 60px auto;
     padding: 40px;
     border-radius: 15px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    font-family: 'Montserrat', sans-serif;
 }
 
-
+/* Header styling */
 h1 {
     text-align: center;
     font-family: 'Playfair Display', serif;
@@ -24,6 +20,7 @@ h1 {
     letter-spacing: 1px;
 }
 
+/* Form group styling */
 .form-group {
     margin-bottom: 25px;
 }
@@ -37,26 +34,9 @@ label {
     font-size: 18px;
 }
 
-.dropdown-container {
-    display: flex;
-    gap: 10px;
-}
-
-.sunday-group {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.sunday-group label {
-    flex-grow: 1;
-}
-
-.sunday-group input[type="checkbox"] {
-    flex-shrink: 0;
-}
-
-select {
+input[type="text"],
+input[type="date"],
+input[type="time"] {
     width: 100%;
     padding: 12px 15px;
     border: 1px solid #ddd;
@@ -65,13 +45,18 @@ select {
     background-color: #f9f9f9;
     transition: all 0.3s ease;
     font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box; /* Ensure padding doesn't affect the width */
 }
 
-select:hover {
+input[type="text"]:hover,
+input[type="date"]:hover,
+input[type="time"]:hover {
     background-color: #f0f0f0;
 }
 
-select:focus {
+input[type="text"]:focus,
+input[type="date"]:focus,
+input[type="time"]:focus {
     border-color: #ffda77;
     outline: none;
     box-shadow: 0 0 12px rgba(255, 218, 119, 0.4);
@@ -89,6 +74,7 @@ button {
     color: white;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 20px;
 }
 
 button:hover {
@@ -100,39 +86,58 @@ button:active {
     transform: translateY(0);
 }
 
-/* Centering and styling the results container */
-.results-container {
-    display: none;
-    width: 60%;
-    margin: 20px auto;
+/* Styling for the generated message container */
+.message-container {
+    margin-top: 40px;
     padding: 20px;
-    border-radius: 15px;
     background-color: #fff;
+    border-radius: 15px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
     font-family: 'Montserrat', sans-serif;
 }
 
-.results-content {
-    text-align: left;
-    font-size: 16px; /* Set all font sizes to the same value */
-}
-
-.results-content p {
-    margin: 10px 0;
-}
-
-.results-content h3 {
-    margin-top: 20px;
-    font-weight: bold; /* Bold the total amount */
+.generated-message {
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    font-family: 'Montserrat', sans-serif;
     font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.copy-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #ffcd00;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.copy-button:hover {
+    background-color: #e6b800;
+}
+
+.copy-button:active {
+    transform: translateY(0);
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     .form-container,
-    .results-container {
+    .message-container {
         width: 90%;
         padding: 20px;
+        max-width: 90%; /* Ensure the form container does not exceed 90% width */
     }
 
     h1 {
@@ -143,22 +148,28 @@ button:active {
         font-size: 16px;
     }
 
-    select {
+    input[type="text"],
+    input[type="date"],
+    input[type="time"] {
         padding: 10px;
         font-size: 14px;
     }
 
-    button {
+    button,
+    .copy-button {
         padding: 12px;
         font-size: 18px;
-    }
-
-    .dropdown-container {
-        flex-direction: column;
     }
 }
 
 @media (max-width: 480px) {
+    .form-container,
+    .message-container {
+        width: 95%;
+        padding: 15px;
+        max-width: 95%; /* Ensure the form container does not exceed 95% width */
+    }
+
     h1 {
         font-size: 20px;
     }
@@ -167,16 +178,18 @@ button:active {
         font-size: 14px;
     }
 
-    select {
+    input[type="text"],
+    input[type="date"],
+    input[type="time"] {
         padding: 8px;
         font-size: 12px;
     }
 
-    button {
+    button,
+    .copy-button {
         padding: 10px;
         font-size: 16px;
     }
 }
-
 
 

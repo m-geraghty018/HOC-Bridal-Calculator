@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Header from "../header/header"; // Import the Header component
 import "./styles.css"; // Ensure your CSS file is correctly linked
 import { initializeBookingForm } from "../utils/bookingForm";
 import { initializeCostCalculation } from "../utils/calculateCosts";
@@ -17,6 +18,7 @@ const IndexPage = () => {
 
   return (
     <main>
+      <Header /> {/* Add the Header component here */}
       <div className="form-container">
         <h1>HOC Bridal Calculator</h1>
         <form id="booking-form">
@@ -166,4 +168,6 @@ const IndexPage = () => {
 export default IndexPage;
 
 export const Head = () => <title>HOC Bridal Calculator</title>;
+
+
 
